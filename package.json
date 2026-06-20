@@ -1,0 +1,30 @@
+{
+  "name": "create-gea-lib",
+  "version": "1.0.0",
+  "description": "Scaffold a modern, reactive library for GeaJS",
+  "type": "module",
+  "bin": {
+    "create-gea-lib": "./bin/index.js"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "scripts": {
+    "start": "node ./bin/index.js"
+  },
+  "keywords": [
+    "geajs",
+    "gea",
+    "reactive",
+    "library",
+    "scaffolder",
+    "create"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "dependencies": {
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2"
+  }
+}
