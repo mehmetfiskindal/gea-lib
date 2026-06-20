@@ -21,8 +21,16 @@
     "scaffolder",
     "create"
   ],
-  "author": "Antigravity",
+  "author": "Mehmet Fıskındal",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehmetfiskindal/geagen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mehmetfiskindal/geagen/issues"
+  },
+  "homepage": "https://github.com/mehmetfiskindal/geagen#readme",
   "dependencies": {
     "picocolors": "^1.1.1",
     "prompts": "^2.4.2"
