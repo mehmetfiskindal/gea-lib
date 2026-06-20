@@ -1,100 +1,105 @@
 # GeaJS Library Scaffolder (`create-gea-lib`)
 
-⚡ GeaJS için modern, reaktif kütüphaneler oluşturmayı kolaylaştıran hızlı ve esnek bir iskelet (scaffold) oluşturma aracıdır. Bu araç sayesinde TypeScript veya JavaScript tabanlı yeni bir GeaJS kütüphane projesini saniyeler içinde kurabilir, otomatik git ve bağımlılık kurulumu yapabilirsiniz.
+⚡ A fast, flexible, and interactive scaffolding tool to easily bootstrap modern, reactive libraries for GeaJS. With this tool, you can set up a new GeaJS library in seconds with TypeScript or JavaScript, complete with automatic git initialization and dependency installation.
 
-## Özellikler
+## Features
 
-- 📦 **Hazır Şablonlar:** JavaScript (`js`) veya TypeScript (`ts`) desteği.
-- ⚙️ **Etkileşimli Arayüz (CLI):** Proje adını, dili ve kurulum tercihlerini adım adım seçebilirsiniz.
-- 🚀 **Hızlı Kurulum (Non-Interactive):** Parametreler yardımıyla soru sormadan hızlı kurulum yapabilme özelliği.
-- 🛠️ **Otomatik Yapılandırma:** Git deposu oluşturma ve bağımlılıkları (`npm`, `yarn`, `pnpm`, `bun`) otomatik yükleme.
-
----
-
-## Kullanım Yöntemleri
-
-### 1. Etkileşimli (Interactive) Kurulum
-
-Herhangi bir argüman vermeden başlatarak CLI sorularını takip edebilirsiniz:
-
-```bash
-# Projeyi başlatmak için:
-npm start
-
-# Veya doğrudan node ile:
-node ./bin/index.js
-```
-
-**Sorulacak Sorular:**
-1. **Project name:** Projenizin klasör ve paket adı (Varsayılan: `gea-library`).
-2. **Select programming language:** TypeScript veya JavaScript.
-3. **Initialize a git repository?** Git deposu başlatılsın mı? (Varsayılan: `Evet`).
-4. **Install dependencies automatically?** Bağımlılıklar otomatik yüklensin mi? (Varsayılan: `Evet`).
+- 📦 **Pre-configured Templates:** Ready-to-go templates for both JavaScript (`js`) and TypeScript (`ts`).
+- ⚙️ **Interactive CLI:** Step-by-step prompts to select your project name, language, and initial setup preferences.
+- 🚀 **Silent Mode (Non-Interactive):** Fast creation using CLI flags to skip prompts.
+- 🛠️ **Auto-configuration:** Automatic Git initialization and dependency installation using your active package manager (`npm`, `yarn`, `pnpm`, `bun`).
 
 ---
 
-### 2. Argümanlar ile Hızlı Kurulum
+## Usage
 
-Belirli parametreler vererek etkileşimli soruları atlayabilir veya özelleştirebilirsiniz:
+You can run this tool remotely using `npx` (recommended), or run it locally during development.
+
+### 1. Remote Execution (Recommended)
+
+Since the package is published on npm, you can generate a new GeaJS library anywhere without installing it globally:
 
 ```bash
-node ./bin/index.js <proje-adi> [secenekler]
+# Using npx (runs interactively by default)
+npx create-gea-lib
 ```
 
-#### Kullanılabilir Seçenekler:
+Or you can use the standard npm initializer format:
+```bash
+npm create gea-lib
+```
 
-| Seçenek | Açıklama |
+---
+
+### 2. Command Line Options
+
+You can skip or pre-configure choices by passing arguments to the command:
+
+```bash
+npx create-gea-lib <project-name> [options]
+```
+
+#### Available Options:
+
+| Option | Description |
 | :--- | :--- |
-| `<proje-adi>` | Oluşturulacak projenin ismi (örn: `my-awesome-lib`). |
-| `--ts` / `--typescript` | TypeScript şablonunu kullanır. |
-| `--js` / `--javascript` | JavaScript şablonunu kullanır. |
-| `--git` | Git deposunu otomatik başlatır. |
-| `--no-git` | Git deposu başlatma adımını atlar. |
-| `--install` | Bağımlılıkları otomatik yükler. |
-| `--no-install` | Bağımlılıkları yüklemeyi atlar. |
-| `-y` / `--yes` | Tüm sorulara varsayılan cevapları vererek sessiz kurulum yapar. |
+| `<project-name>` | The name of the project/directory to create (e.g., `my-awesome-lib`). |
+| `--ts` / `--typescript` | Use the TypeScript template. |
+| `--js` / `--javascript` | Use the JavaScript template. |
+| `--git` | Automatically initialize a git repository. |
+| `--no-git` | Skip initializing a git repository. |
+| `--install` | Automatically install dependencies. |
+| `--no-install` | Skip installing dependencies. |
+| `-y` / `--yes` | Use default choices for all prompts (creates `gea-library` in TypeScript with git and install). |
 
-#### Örnekler:
+#### Examples:
 
-**TypeScript kullanan ve otomatik bağımlılık yükleyen sessiz kurulum:**
+**Create a TypeScript project with git and installed dependencies silently:**
 ```bash
-node ./bin/index.js my-ts-lib --ts --git --install
-# Veya daha kısa:
-node ./bin/index.js my-ts-lib -y
+npx create-gea-lib my-ts-lib -y
 ```
 
-**JavaScript kullanan ve bağımlılık yüklemesini atlayan kurulum:**
+**Create a JavaScript project and skip dependency installation:**
 ```bash
-node ./bin/index.js my-js-lib --js --no-install
+npx create-gea-lib my-js-lib --js --no-install
 ```
 
 ---
 
-### 3. Yerel Paket Olarak Bağlama (Global Link)
+### 3. Local Development & Installation
 
-Geliştirme aşamasında bu aracı terminalinizde global bir komut olarak kullanmak isterseniz:
+If you are developing this scaffolder tool locally, you can use these methods:
 
+#### Run locally:
 ```bash
-# Proje kök dizinindeyken link oluşturun:
+# In the scaffolder root directory
+node ./bin/index.js
+# Or:
+npm start
+```
+
+#### Link locally for testing:
+```bash
+# Create a global symlink of the package
 npm link
 
-# Artık dilediğiniz klasörde şu komutla yeni proje açabilirsiniz:
-create-gea-lib my-new-library
+# Run it from anywhere on your machine:
+create-gea-lib my-library
 ```
 
 ---
 
-## Proje Oluşturulduktan Sonra Geliştirme
+## Developing Your New Library
 
-Yeni oluşturduğunuz kütüphane projesinin klasörüne giderek aşağıdaki komutları kullanabilirsiniz:
+Once your project is created, navigate into the directory and run these commands to start developing:
 
 ```bash
-# Proje klasörüne geçiş yapın:
-cd <proje-adi>
+# Go to the project directory
+cd <project-name>
 
-# İnteraktif oyun alanını (sandbox/demo) başlatır:
+# Start the interactive sandbox demo environment
 npm run dev
 
-# Kütüphaneyi NPM dağıtımı için derler/derleme çıktılarını oluşturur:
+# Build the library for NPM distribution
 npm run build
 ```
