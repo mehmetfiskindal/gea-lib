@@ -1,10 +1,10 @@
 {
-  "name": "create-gea-lib",
+  "name": "gea-lib",
   "version": "1.0.0",
   "description": "Scaffold a modern, reactive library for GeaJS",
   "type": "module",
   "bin": {
-    "create-gea-lib": "./bin/index.js"
+    "gea-lib": "./bin/index.js"
   },
   "files": [
     "bin",
@@ -25,12 +25,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mehmetfiskindal/geagen.git"
+    "url": "git+https://github.com/mehmetfiskindal/gea-lib.git"
   },
   "bugs": {
-    "url": "https://github.com/mehmetfiskindal/geagen/issues"
+    "url": "https://github.com/mehmetfiskindal/gea-lib/issues"
   },
-  "homepage": "https://github.com/mehmetfiskindal/geagen#readme",
+  "homepage": "https://github.com/mehmetfiskindal/gea-lib#readme",
   "dependencies": {
     "picocolors": "^1.1.1",
     "prompts": "^2.4.2"

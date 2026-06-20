@@ -1,4 +1,4 @@
-# GeaJS Library Scaffolder (`create-gea-lib`)
+# GeaJS Library Scaffolder (`gea-lib`)
 
 ⚡ A fast, flexible, and interactive scaffolding tool to easily bootstrap modern, reactive libraries for GeaJS. With this tool, you can set up a new GeaJS library in seconds with TypeScript or JavaScript, complete with automatic git initialization and dependency installation.
 
@@ -21,12 +21,7 @@ Since the package is published on npm, you can generate a new GeaJS library anyw
 
 ```bash
 # Using npx (runs interactively by default)
-npx create-gea-lib
-```
-
-Or you can use the standard npm initializer format:
-```bash
-npm create gea-lib
+npx gea-lib
 ```
 
 ---
@@ -36,7 +31,7 @@ npm create gea-lib
 You can skip or pre-configure choices by passing arguments to the command:
 
 ```bash
-npx create-gea-lib <project-name> [options]
+npx gea-lib <project-name> [options]
 ```
 
 #### Available Options:
@@ -56,12 +51,12 @@ npx create-gea-lib <project-name> [options]
 
 **Create a TypeScript project with git and installed dependencies silently:**
 ```bash
-npx create-gea-lib my-ts-lib -y
+npx gea-lib my-ts-lib -y
 ```
 
 **Create a JavaScript project and skip dependency installation:**
 ```bash
-npx create-gea-lib my-js-lib --js --no-install
+npx gea-lib my-js-lib --js --no-install
 ```
 
 ---
@@ -84,7 +79,7 @@ npm start
 npm link
 
 # Run it from anywhere on your machine:
-create-gea-lib my-library
+gea-lib my-library
 ```
 
 ---
